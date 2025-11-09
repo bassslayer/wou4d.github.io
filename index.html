@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mouad | Links</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: "Poppins", sans-serif;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 6vh 5vw;
+    background: #000 url("bg.png") center/cover no-repeat fixed;
+  }
+
+  .profile {
+    width: clamp(90px, 18vw, 150px);
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    margin-top: 1rem;
+  }
+
+  h1 {
+    margin: 0.8rem 0 0.3rem;
+    font-size: clamp(1.4rem, 4vw, 2rem);
+  }
+  p {
+    opacity: 0.9;
+    margin-bottom: 2rem;
+  }
+
+  /* --- Link Buttons --- */
+  .link {
+    position: relative;
+    width: min(90%, 420px);
+    height: 70px;
+    margin: 0.7rem 0;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(18px) saturate(160%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+
+  .link:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+  }
+
+  /* Container for icon + title */
+  .content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Icon starts centered */
+  .icon {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.4s ease;
+  }
+
+  /* Title starts hidden behind the icon */
+  .label {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  /* Hover animation: icon slides left, title fades in */
+  .link:hover .icon {
+    transform: translateX(-22px);
+  }
+
+  .link:hover .label {
+    opacity: 1;
+    transform: translateX(15px);
+  }
+
+  footer {
+    margin-top: auto;
+    opacity: 0.8;
+    padding-top: 1.5rem;
+    font-size: 0.9rem;
+  }
+</style>
+</head>
+<body>
+  <img class="profile" src="https://avatars.steamstatic.com/84ddaf3ef97512734e2b093b24f953298a67c406_full.jpg" alt="Mouad">
+  <h1>@wou4d</h1>
+  <p>All my links in one place</p>
+
+  <a class="link" href="https://www.youtube.com/@wou4d" target="_blank">
+    <div class="content">
+      <img class="icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg"
+           style="filter:invert(25%) sepia(96%) saturate(7461%) hue-rotate(356deg) brightness(97%) contrast(107%);" alt="">
+      <span class="label">YouTube</span>
+    </div>
+  </a>
+
+  <a class="link" href="https://www.tiktok.com/@wou4d" target="_blank">
+    <div class="content">
+      <img class="icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg"
+           style="filter:invert(47%) sepia(96%) saturate(2410%) hue-rotate(170deg) brightness(97%) contrast(101%);" alt="">
+      <span class="label">TikTok</span>
+    </div>
+  </a>
+
+  <a class="link" href="https://instagram.com/wou4d" target="_blank">
+    <div class="content">
+      <img class="icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
+           style="filter:invert(47%) sepia(96%) saturate(6000%) hue-rotate(290deg) brightness(95%) contrast(101%);" alt="">
+      <span class="label">Instagram</span>
+    </div>
+  </a>
+
+  <footer>lol</footer>
+</body>
+</html>
