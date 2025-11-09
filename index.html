@@ -1,137 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Mouad | Links</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>@wou4d | Links</title>
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linktree.svg">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
     font-family: "Poppins", sans-serif;
     color: #fff;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 6vh 5vw;
-    background: #000 url("bg.png") center/cover no-repeat fixed;
+    min-height: 100vh;
+    padding: 5vh 5vw;
+    overflow-x: hidden;
+    position: relative;
+    background: #000 url("bg.png") center center / cover no-repeat fixed;
   }
 
-  .profile {
-    width: clamp(90px, 18vw, 150px);
+  /* === PROFILE GLOW === */
+  img.profile {
+    width: clamp(100px, 20vw, 160px);
+    height: clamp(100px, 20vw, 160px);
     border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    margin-top: 1rem;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.6);
+    margin-top: 4vh;
+    box-shadow: 0 0 35px rgba(0, 153, 255, 0.7);
+    transition: all 0.4s ease;
+  }
+
+  img.profile:hover {
+    box-shadow: 0 0 55px rgba(0, 153, 255, 0.9);
+    transform: scale(1.05);
   }
 
   h1 {
-    margin: 0.8rem 0 0.3rem;
-    font-size: clamp(1.4rem, 4vw, 2rem);
-  }
-  p {
-    opacity: 0.9;
-    margin-bottom: 2rem;
+    font-size: clamp(1.4em, 4vw, 2em);
+    margin: 18px 0 5px;
+    letter-spacing: 1px;
+    color: #fff;
+    text-shadow: 0 0 15px rgba(0,0,0,0.7);
+    text-align: center;
   }
 
-  /* --- Link Buttons --- */
+  p {
+    color: #ddd;
+    font-size: clamp(0.9em, 2.5vw, 1.1em);
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px rgba(0,0,0,0.7);
+    text-align: center;
+  }
+
+  /* === SOCIAL BUTTON GLOW === */
   .link {
-    position: relative;
-    width: min(90%, 420px);
-    height: 70px;
-    margin: 0.7rem 0;
-    border-radius: 16px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(18px) saturate(160%);
     display: flex;
-    justify-content: center;
     align-items: center;
-    overflow: hidden;
-    transition: background 0.3s ease, transform 0.3s ease;
+    justify-content: center;
+    gap: 12px;
+    width: 90%;
+    max-width: 360px;
+    margin: 12px 0;
+    padding: 14px;
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
+    border-radius: 14px;
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 153, 255, 0.25);
   }
 
   .link:hover {
-    background: rgba(255, 255, 255, 0.15);
-    transform: translateY(-2px);
+    transform: scale(1.04);
+    box-shadow: 0 0 35px rgba(0, 153, 255, 0.7);
+    background: rgba(255, 255, 255, 0.12);
   }
 
-  /* Container for icon + title */
-  .content {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* Icon starts centered */
   .icon {
-    width: 30px;
-    height: 30px;
-    transition: transform 0.4s ease;
-  }
-
-  /* Title starts hidden behind the icon */
-  .label {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #fff;
-    font-weight: 600;
-    opacity: 0;
-    transition: opacity 0.4s ease, transform 0.4s ease;
-    pointer-events: none;
-    white-space: nowrap;
-  }
-
-  /* Hover animation: icon slides left, title fades in */
-  .link:hover .icon {
-    transform: translateX(-22px);
-  }
-
-  .link:hover .label {
-    opacity: 1;
-    transform: translateX(15px);
+    width: clamp(24px, 6vw, 28px);
+    height: clamp(24px, 6vw, 28px);
+    border-radius: 6px;
+    object-fit: cover;
+    transition: all 0.3s ease;
   }
 
   footer {
     margin-top: auto;
-    opacity: 0.8;
-    padding-top: 1.5rem;
-    font-size: 0.9rem;
+    font-size: clamp(0.7em, 2vw, 0.9em);
+    color: #fff;
+    padding-top: 25px;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 10px rgba(0,0,0,0.6);
+    text-align: center;
+  }
+
+  /* Make it extra polished on ultrawide displays */
+  @media (min-aspect-ratio: 21/9) {
+    .link { max-width: 400px; }
+    body { justify-content: center; }
   }
 </style>
 </head>
 <body>
-  <img class="profile" src="https://avatars.steamstatic.com/84ddaf3ef97512734e2b093b24f953298a67c406_full.jpg" alt="Mouad">
+
+  <img class="profile" src="https://raw.githubusercontent.com/bassslayer/wou4d.github.io/main/pfp.jpg" alt="Mouad">
   <h1>@wou4d</h1>
   <p>All my links in one place</p>
 
+  <!-- YouTube -->
   <a class="link" href="https://www.youtube.com/@wou4d" target="_blank">
-    <div class="content">
-      <img class="icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg"
-           style="filter:invert(25%) sepia(96%) saturate(7461%) hue-rotate(356deg) brightness(97%) contrast(107%);" alt="">
-      <span class="label">YouTube</span>
-    </div>
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg"
+         style="filter: invert(25%) sepia(96%) saturate(7461%) hue-rotate(356deg) brightness(97%) contrast(107%);" alt="YouTube">
+    YouTube
   </a>
 
+  <!-- TikTok -->
   <a class="link" href="https://www.tiktok.com/@wou4d" target="_blank">
-    <div class="content">
-      <img class="icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg"
-           style="filter:invert(47%) sepia(96%) saturate(2410%) hue-rotate(170deg) brightness(97%) contrast(101%);" alt="">
-      <span class="label">TikTok</span>
-    </div>
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg"
+         style="filter: invert(47%) sepia(96%) saturate(2410%) hue-rotate(170deg) brightness(97%) contrast(101%);" alt="TikTok">
+    TikTok
   </a>
 
+  <!-- Instagram -->
   <a class="link" href="https://instagram.com/wou4d" target="_blank">
-    <div class="content">
-      <img class="icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
-           style="filter:invert(47%) sepia(96%) saturate(6000%) hue-rotate(290deg) brightness(95%) contrast(101%);" alt="">
-      <span class="label">Instagram</span>
-    </div>
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
+         style="filter: invert(47%) sepia(96%) saturate(6000%) hue-rotate(290deg) brightness(95%) contrast(101%);" alt="Instagram">
+    Instagram
   </a>
 
-  <footer>lol</footer>
+ 
+  <footer>LOL</footer>
+
 </body>
 </html>
