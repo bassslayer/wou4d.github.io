@@ -1,166 +1,315 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>@wou4d | Links</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>@wou4d | Links</title>
+  <style>
+    :root {
+      --purple:     #9b5de5;
+      --purple-dim: #6a00f4;
+      --purple-hi:  #d084ff;
+      --pink:       #e040fb;
+      --bg:         #05050a;
+      --border:     rgba(155,93,229,0.22);
+      --glass:      rgba(155,93,229,0.07);
+      --muted:      #55557a;
+    }
 
-<!-- 🔗 Emoji favicon -->
-<link rel="icon" type="image/svg+xml" href="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/linkding.svg">
+```
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 56px 24px 40px;
+  overflow-x: hidden;
+}
 
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+/* ── ORBS ── */
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(110px);
+  pointer-events: none;
+  z-index: 0;
+  animation: breathe 6s ease-in-out infinite alternate;
+}
+.orb-1 { width: 400px; height: 400px; background: rgba(107,0,244,0.15); top: -130px; right: -80px; }
+.orb-2 { width: 300px; height: 300px; background: rgba(224,64,251,0.09); bottom: 40px; left: -80px; animation-delay: 2s; }
 
-  body {
-    font-family: "Poppins", sans-serif;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 100vh;
-    padding: 5vh 5vw;
-    overflow-x: hidden;
-    background: #000 url("https://i.pinimg.com/originals/e1/7a/b9/e17ab9681bec36303a67cd0e13a7b170.gif?v=5") center center / cover no-repeat fixed;
-  }
+@keyframes breathe {
+  from { opacity: 0.6; transform: scale(1); }
+  to   { opacity: 1;   transform: scale(1.08); }
+}
 
-  /* === PROFILE === */
-  img.profile {
-    width: clamp(100px, 20vw, 160px);
-    height: clamp(100px, 20vw, 160px);
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    margin-top: 4vh;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
-    transition: all 0.4s ease;
-  }
+/* ── WRAP ── */
+.wrap {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  img.profile:hover {
-    box-shadow: 0 0 35px rgba(255, 255, 255, 0.4);
-    transform: scale(1.04);
-  }
+/* ── AVATAR ── */
+.avatar-wrap {
+  position: relative;
+  width: 112px;
+  height: 112px;
+  margin-bottom: 22px;
+  animation: fadeUp 0.6s ease 0.1s both;
+}
 
-  h1 {
-    font-size: clamp(1.4em, 4vw, 2em);
-    margin: 18px 0 5px;
-    color: #fff;
-    text-align: center;
-  }
+.avatar-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: conic-gradient(var(--purple-hi), var(--purple-dim), var(--pink), var(--purple-hi));
+  animation: spin 4s linear infinite;
+  z-index: 0;
+}
 
-  p {
-    color: #ddd;
-    font-size: clamp(0.9em, 2.5vw, 1.1em);
-    margin-bottom: 30px;
-    text-align: center;
-  }
+.avatar-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: 50%;
+  background: var(--bg);
+  z-index: 1;
+}
 
-  /* === LINKS === */
-  .link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    width: 90%;
-    max-width: 360px;
-    margin: 12px 0;
-    padding: 14px;
-    border-radius: 14px;
-    text-decoration: none;
-    color: #fff;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
-    transition: all 0.3s ease;
-    font-weight: 500;
-  }
+.avatar-wrap img {
+  position: absolute;
+  inset: 5px;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 2;
+}
 
-  .link:hover {
-    transform: scale(1.03);
-    background: rgba(255, 255, 255, 0.12);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
-  }
+@keyframes spin { to { transform: rotate(360deg); } }
 
-  .icon {
-    width: clamp(26px, 6vw, 30px);
-    height: clamp(26px, 6vw, 30px);
-    border-radius: 6px;
-    object-fit: contain;
-  }
+/* ── NAME & BIO ── */
+h1 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  background: linear-gradient(135deg, #fff 20%, var(--purple-hi));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+  animation: fadeUp 0.6s ease 0.2s both;
+}
 
-  footer {
-    margin-top: auto;
-    font-size: clamp(0.7em, 2vw, 0.9em);
-    color: #fff;
-    padding-top: 25px;
-    text-align: center;
-  }
+.bio {
+  font-size: 0.78rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  margin-bottom: 34px;
+  text-align: center;
+  animation: fadeUp 0.6s ease 0.3s both;
+}
 
-  @media (min-aspect-ratio: 21/9) {
-    .link { max-width: 400px; }
-    body { justify-content: center; }
-  }
-</style>
+/* ── LINKS ── */
+.links {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: #fff;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: transform 0.3s ease, border-color 0.3s, background 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+  animation: fadeUp 0.5s ease var(--d, 0.4s) both;
+}
+
+.link::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--purple-hi), var(--purple-dim));
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: 3px 0 0 3px;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+  transition: left 0.5s ease;
+}
+
+.link:hover {
+  transform: translateX(5px);
+  border-color: var(--purple);
+  background: rgba(155,93,229,0.12);
+  box-shadow: 0 0 20px rgba(155,93,229,0.15);
+}
+
+.link:hover::before { opacity: 1; }
+.link:hover::after  { left: 150%; }
+
+.link:nth-child(1) { --d: 0.35s; }
+.link:nth-child(2) { --d: 0.43s; }
+.link:nth-child(3) { --d: 0.51s; }
+.link:nth-child(4) { --d: 0.59s; }
+.link:nth-child(5) { --d: 0.67s; }
+
+.link-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.link-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  flex: 1;
+}
+
+.link-arrow {
+  font-size: 0.8rem;
+  color: var(--muted);
+  transition: color 0.3s, transform 0.3s;
+}
+
+.link:hover .link-arrow {
+  color: var(--purple-hi);
+  transform: translateX(3px);
+}
+
+/* ── FOOTER ── */
+footer {
+  position: relative;
+  z-index: 2;
+  margin-top: 36px;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: var(--muted);
+  text-transform: uppercase;
+  animation: fadeUp 0.6s ease 0.85s both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+```
+
+  </style>
 </head>
 <body>
 
-  <img class="profile" src="https://raw.githubusercontent.com/bassslayer/wou4d.github.io/main/pfp.jpg" alt="Mouad">
-  <h1>@wou4d</h1>
-  <p>All my links in one place</p>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <div class="wrap">
+
+```
+<div class="avatar-wrap">
+  <img
+    src="https://raw.githubusercontent.com/bassslayer/wou4d.github.io/main/logo.png"
+    alt="wou4d"
+    onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/bassslayer/wou4d.github.io/main/pfp.jpg'">
+</div>
+
+<h1>@wou4d</h1>
+<p class="bio">All my links in one place</p>
+
+<div class="links">
 
   <!-- YouTube -->
   <a class="link" href="https://www.youtube.com/@wou4d" target="_blank">
-    <img class="icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg"
-         style="filter: invert(25%) sepia(96%) saturate(7461%) hue-rotate(356deg) brightness(97%) contrast(107%);" alt="YouTube">
-    YouTube
+    <svg class="link-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z" fill="#FF0000"/>
+      <path d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#fff"/>
+    </svg>
+    <span class="link-name">YouTube</span>
+    <span class="link-arrow">→</span>
   </a>
 
   <!-- TikTok -->
   <a class="link" href="https://www.tiktok.com/@wou4d" target="_blank">
-    <img class="icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg"
-         style="filter: invert(47%) sepia(96%) saturate(2410%) hue-rotate(170deg) brightness(97%) contrast(101%);" alt="TikTok">
-    TikTok
+    <svg class="link-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z" fill="#ffffff"/>
+    </svg>
+    <span class="link-name">TikTok</span>
+    <span class="link-arrow">→</span>
   </a>
 
   <!-- Instagram -->
   <a class="link" href="https://instagram.com/wou4d" target="_blank">
-    <img class="icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
-         style="filter: invert(47%) sepia(96%) saturate(6000%) hue-rotate(290deg) brightness(95%) contrast(101%);" alt="Instagram">
-    Instagram
+    <svg class="link-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#f09433"/>
+          <stop offset="25%" stop-color="#e6683c"/>
+          <stop offset="50%" stop-color="#dc2743"/>
+          <stop offset="75%" stop-color="#cc2366"/>
+          <stop offset="100%" stop-color="#bc1888"/>
+        </linearGradient>
+      </defs>
+      <path fill="url(#ig)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+    </svg>
+    <span class="link-name">Instagram</span>
+    <span class="link-arrow">→</span>
   </a>
 
   <!-- Spotify -->
   <a class="link" href="https://open.spotify.com/user/avv6zw9u11gemdibx2h6u4689/playlists" target="_blank">
-    <img class="icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/spotify.svg"
-         style="filter: invert(61%) sepia(97%) saturate(621%) hue-rotate(96deg) brightness(100%) contrast(96%);" alt="Spotify">
-    Spotify
+    <svg class="link-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#1DB954" d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+    </svg>
+    <span class="link-name">Spotify</span>
+    <span class="link-arrow">→</span>
   </a>
-  
-<!-- Kick -->
-<a class="link" href="https://kick.com/wou4d" target="_blank">
-  <img class="icon" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/kick.svg" alt="Kick">
-  Kick
-</a>
 
+  <!-- Kick -->
+  <a class="link" href="https://kick.com/wou4d" target="_blank">
+    <img class="link-icon" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/kick.svg" alt="Kick">
+    <span class="link-name">Kick</span>
+    <span class="link-arrow">→</span>
+  </a>
 
+</div>
+```
 
-
-
+  </div>
 
   <footer>© wou4d</footer>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
