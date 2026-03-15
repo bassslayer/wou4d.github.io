@@ -1,310 +1,308 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>@wou4d | Links</title>
-  <style>
-    :root {
-      --purple:     #9b5de5;
-      --purple-dim: #6a00f4;
-      --purple-hi:  #d084ff;
-      --pink:       #e040fb;
-      --bg:         #05050a;
-      --border:     rgba(155,93,229,0.22);
-      --glass:      rgba(155,93,229,0.07);
-      --muted:      #55557a;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>@wou4d | Links</title>
 
-```
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+<style>
 
-html, body { width: 100%; }
-
-body {
-  font-family: system-ui, -apple-system, sans-serif;
-  background: var(--bg);
-  color: #fff;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 20px;
-  overflow-x: hidden;
+:root{
+--purple:#9b5de5;
+--purple-dim:#6a00f4;
+--purple-hi:#d084ff;
+--pink:#e040fb;
+--bg:#05050a;
+--border:rgba(155,93,229,0.22);
+--glass:rgba(155,93,229,0.07);
+--muted:#55557a;
 }
 
-/* ── ORBS ── */
-.orb {
-  position: fixed;
-  border-radius: 50%;
-  filter: blur(110px);
-  pointer-events: none;
-  z-index: 0;
-  animation: breathe 6s ease-in-out infinite alternate;
-}
-.orb-1 { width: 350px; height: 350px; background: rgba(107,0,244,0.15); top: -100px; right: -60px; }
-.orb-2 { width: 280px; height: 280px; background: rgba(224,64,251,0.09); bottom: 40px; left: -60px; animation-delay: 2s; }
-@keyframes breathe {
-  from { opacity: 0.6; transform: scale(1); }
-  to   { opacity: 1;   transform: scale(1.08); }
+*,
+*::before,
+*::after{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-/* ── WRAP ── */
-.wrap {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 380px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+html,body{
+width:100%;
+height:100%;
 }
 
-/* ── AVATAR ── */
-.avatar-outer {
-  position: relative;
-  width: 118px;
-  height: 118px;
-  margin-bottom: 22px;
-  animation: fadeUp 0.6s ease 0.1s both;
-  cursor: pointer;
-  flex-shrink: 0;
-  overflow: hidden;
-  border-radius: 50%;
-}
-.avatar-ring {
-  position: absolute;
-  inset: -3px;
-  border-radius: 50%;
-  background: conic-gradient(var(--purple-hi), var(--purple-dim), var(--pink), var(--purple-hi));
-  animation: spin 4s linear infinite;
-  z-index: 0;
-}
-.avatar-bg {
-  position: absolute;
-  inset: 2px;
-  border-radius: 50%;
-  background: var(--bg);
-  z-index: 1;
-}
-.avatar-img {
-  position: absolute;
-  inset: 5px;
-  width: calc(100% - 10px);
-  height: calc(100% - 10px);
-  border-radius: 50%;
-  object-fit: cover;
-  z-index: 2;
-}
-.avatar-outer.flipping {
-  animation: coinFlip 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-.avatar-outer.flipping .avatar-ring {
-  animation: spin 0.2s linear infinite;
-  filter: drop-shadow(0 0 12px rgba(208,132,255,0.9));
-}
-@keyframes coinFlip {
-  0%   { transform: rotateY(0deg) scale(1); }
-  25%  { transform: rotateY(90deg) scale(0.85); filter: brightness(2); }
-  50%  { transform: rotateY(180deg) scale(1); }
-  75%  { transform: rotateY(270deg) scale(0.85); filter: brightness(2); }
-  100% { transform: rotateY(360deg) scale(1); }
-}
-@keyframes spin { to { transform: rotate(360deg); } }
-
-/* ── NAME ── */
-h1 {
-  font-size: 1.6rem;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  background: linear-gradient(90deg, #fff 0%, var(--purple-hi) 25%, var(--pink) 50%, var(--purple-hi) 75%, #fff 100%);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 8px;
-  animation: fadeUp 0.6s ease 0.2s both, gradientSlide 3s linear infinite;
-  cursor: default;
-}
-@keyframes gradientSlide {
-  0%   { background-position: 0% center; }
-  100% { background-position: 200% center; }
-}
-h1:hover {
-  animation: gradientSlide 0.8s linear infinite, glitch 0.4s steps(2) infinite;
-}
-@keyframes glitch {
-  0%   { filter: drop-shadow(2px 0 #e040fb) drop-shadow(-2px 0 #d084ff); transform: translate(0); }
-  25%  { filter: drop-shadow(-3px 0 #d084ff) drop-shadow(3px 0 #e040fb); transform: translate(-2px, 1px); }
-  50%  { filter: drop-shadow(3px 0 #e040fb) drop-shadow(-1px 0 #9b5de5); transform: translate(2px, -1px); }
-  75%  { filter: drop-shadow(-2px 0 #d084ff) drop-shadow(2px 0 #e040fb); transform: translate(-1px, 2px); }
-  100% { filter: drop-shadow(2px 0 #e040fb) drop-shadow(-2px 0 #d084ff); transform: translate(0); }
+body{
+font-family:system-ui,-apple-system,sans-serif;
+background:var(--bg);
+color:#fff;
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow-x:hidden;
 }
 
-/* ── BIO ── */
-.bio {
-  font-size: 0.78rem;
-  color: var(--muted);
-  letter-spacing: 0.1em;
-  margin-bottom: 34px;
-  text-align: center;
-  animation: fadeUp 0.6s ease 0.3s both;
+/* CENTER WRAPPER */
+
+.page{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+min-height:100vh;
+padding:40px 20px;
 }
 
-/* ── LINKS ── */
-.links {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+/* ORBS */
+
+.orb{
+position:fixed;
+border-radius:50%;
+filter:blur(110px);
+pointer-events:none;
+z-index:0;
+animation:breathe 6s ease-in-out infinite alternate;
 }
 
-.link {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  width: 100%;
-  padding: 15px 18px;
-  border-radius: 14px;
-  text-decoration: none;
-  color: #fff;
-  background: var(--glass);
-  border: 1px solid var(--border);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;
-  overflow: hidden;
-  animation: fadeUp 0.5s ease var(--d, 0.4s) both;
-}
-.link::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 3px;
-  background: linear-gradient(to bottom, var(--purple-hi), var(--purple-dim));
-  opacity: 0;
-  transition: opacity 0.3s;
-  border-radius: 3px 0 0 3px;
-}
-.link-shine {
-  position: absolute;
-  top: 0; left: -100%;
-  width: 60%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
-  transition: left 0.5s ease;
-  pointer-events: none;
-}
-.link:hover { border-color: var(--purple); background: rgba(155,93,229,0.12); box-shadow: 0 0 20px rgba(155,93,229,0.15); }
-.link:hover::before { opacity: 1; }
-.link:hover .link-shine { left: 150%; }
-
-.link:nth-child(1) { --d: 0.35s; }
-.link:nth-child(2) { --d: 0.43s; }
-.link:nth-child(3) { --d: 0.51s; }
-.link:nth-child(4) { --d: 0.59s; }
-.link:nth-child(5) { --d: 0.67s; }
-
-/* ── ICON WRAP ── */
-.icon-wrap {
-  width: 28px;
-  height: 28px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: iconFloat var(--fi-dur, 3s) ease-in-out infinite var(--fi-del, 0s);
-}
-.link:nth-child(1) .icon-wrap { --fi-dur: 2.8s; --fi-del: 0.0s; }
-.link:nth-child(2) .icon-wrap { --fi-dur: 3.2s; --fi-del: 0.4s; }
-.link:nth-child(3) .icon-wrap { --fi-dur: 2.6s; --fi-del: 0.8s; }
-.link:nth-child(4) .icon-wrap { --fi-dur: 3.5s; --fi-del: 0.2s; }
-.link:nth-child(5) .icon-wrap { --fi-dur: 3.0s; --fi-del: 0.6s; }
-
-@keyframes iconFloat {
-  0%, 100% { transform: scale(1) rotate(0deg); }
-  35%       { transform: scale(1.08) rotate(-4deg); }
-  65%       { transform: scale(1.04) rotate(3deg); }
-}
-.link:hover .icon-wrap {
-  animation: iconBounce 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) forwards;
-  filter: drop-shadow(0 0 6px rgba(155,93,229,0.9));
-}
-@keyframes iconBounce {
-  0%   { transform: scale(1) rotate(0deg); }
-  20%  { transform: scale(1.35) rotate(-10deg); }
-  45%  { transform: scale(0.88) rotate(6deg); }
-  65%  { transform: scale(1.12) rotate(-3deg); }
-  85%  { transform: scale(0.96) rotate(1deg); }
-  100% { transform: scale(1) rotate(0deg); }
-}
-.icon-wrap svg, .icon-wrap img { width: 28px; height: 28px; object-fit: contain; display: block; }
-
-/* ── LINK NAME ── */
-.link-name {
-  font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  flex: 1;
-  transition: color 0.3s, letter-spacing 0.3s;
-}
-.link:hover .link-name { color: var(--purple-hi); letter-spacing: 0.06em; }
-
-/* ── ARROW ── */
-.link-arrow {
-  display: flex;
-  align-items: center;
-  color: var(--muted);
-  transition: color 0.3s, transform 0.3s, opacity 0.3s;
-  animation: arrowPulse 2s ease-in-out infinite;
-  flex-shrink: 0;
-  opacity: 0.4;
-}
-.link-arrow svg { display: block; }
-@keyframes arrowPulse {
-  0%, 100% { opacity: 0.3; }
-  50%       { opacity: 1; }
-}
-.link:hover .link-arrow { color: var(--purple-hi); transform: translateX(4px); animation: none; opacity: 1; }
-
-/* ── FOOTER ── */
-footer {
-  position: relative;
-  z-index: 2;
-  margin-top: 36px;
-  font-size: 0.65rem;
-  letter-spacing: 0.3em;
-  color: var(--muted);
-  text-transform: uppercase;
-  animation: fadeUp 0.6s ease 0.85s both;
+.orb-1{
+width:350px;
+height:350px;
+background:rgba(107,0,244,0.15);
+top:-100px;
+right:-60px;
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(0); }
-  to   { opacity: 1; transform: translateY(0); }
+.orb-2{
+width:280px;
+height:280px;
+background:rgba(224,64,251,0.09);
+bottom:40px;
+left:-60px;
+animation-delay:2s;
 }
-```
 
-  </style>
+@keyframes breathe{
+from{opacity:0.6;transform:scale(1);}
+to{opacity:1;transform:scale(1.08);}
+}
+
+/* MAIN WRAP */
+
+.wrap{
+position:relative;
+z-index:2;
+width:100%;
+max-width:380px;
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+/* AVATAR */
+
+.avatar-outer{
+position:relative;
+width:118px;
+height:118px;
+margin-bottom:22px;
+border-radius:50%;
+overflow:hidden;
+cursor:pointer;
+animation:fadeUp .6s ease .1s both;
+}
+
+.avatar-ring{
+position:absolute;
+inset:-3px;
+border-radius:50%;
+background:conic-gradient(var(--purple-hi),var(--purple-dim),var(--pink),var(--purple-hi));
+animation:spin 4s linear infinite;
+}
+
+.avatar-bg{
+position:absolute;
+inset:2px;
+border-radius:50%;
+background:var(--bg);
+}
+
+.avatar-img{
+position:absolute;
+inset:5px;
+width:calc(100% - 10px);
+height:calc(100% - 10px);
+border-radius:50%;
+object-fit:cover;
+}
+
+@keyframes spin{
+to{transform:rotate(360deg);}
+}
+
+/* NAME */
+
+h1{
+font-size:1.6rem;
+font-weight:800;
+letter-spacing:.02em;
+background:linear-gradient(90deg,#fff 0%,var(--purple-hi) 25%,var(--pink) 50%,var(--purple-hi) 75%,#fff 100%);
+background-size:200% auto;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+margin-bottom:8px;
+animation:fadeUp .6s ease .2s both,gradientSlide 3s linear infinite;
+}
+
+@keyframes gradientSlide{
+0%{background-position:0% center;}
+100%{background-position:200% center;}
+}
+
+/* BIO */
+
+.bio{
+font-size:.78rem;
+color:var(--muted);
+letter-spacing:.1em;
+margin-bottom:34px;
+text-align:center;
+animation:fadeUp .6s ease .3s both;
+}
+
+/* LINKS */
+
+.links{
+width:100%;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.link{
+position:relative;
+display:flex;
+align-items:center;
+gap:14px;
+padding:15px 18px;
+border-radius:14px;
+text-decoration:none;
+color:#fff;
+background:var(--glass);
+border:1px solid var(--border);
+backdrop-filter:blur(20px);
+transition:.3s;
+overflow:hidden;
+animation:fadeUp .5s ease var(--d,.4s) both;
+}
+
+.link:hover{
+border-color:var(--purple);
+background:rgba(155,93,229,0.12);
+box-shadow:0 0 20px rgba(155,93,229,.15);
+}
+
+.link::before{
+content:'';
+position:absolute;
+left:0;
+top:0;
+bottom:0;
+width:3px;
+background:linear-gradient(to bottom,var(--purple-hi),var(--purple-dim));
+opacity:0;
+transition:.3s;
+}
+
+.link:hover::before{
+opacity:1;
+}
+
+/* ICON */
+
+.icon-wrap{
+width:28px;
+height:28px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.icon-wrap svg,
+.icon-wrap img{
+width:28px;
+height:28px;
+}
+
+/* LINK NAME */
+
+.link-name{
+font-size:.95rem;
+font-weight:700;
+letter-spacing:.03em;
+flex:1;
+}
+
+.link:hover .link-name{
+color:var(--purple-hi);
+}
+
+/* ARROW */
+
+.link-arrow{
+opacity:.4;
+transition:.3s;
+}
+
+.link:hover .link-arrow{
+opacity:1;
+transform:translateX(4px);
+}
+
+/* FOOTER */
+
+footer{
+margin-top:36px;
+font-size:.65rem;
+letter-spacing:.3em;
+color:var(--muted);
+text-transform:uppercase;
+animation:fadeUp .6s ease .85s both;
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+</style>
 </head>
+
 <body>
 
-  <div class="orb orb-1"></div>
-  <div class="orb orb-2"></div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
 
-  <div class="wrap">
+<div class="page">
 
-```
+<div class="wrap">
+
 <div class="avatar-outer" id="avatar">
-  <div class="avatar-ring"></div>
-  <div class="avatar-bg"></div>
-  <img class="avatar-img"
-    src="https://raw.githubusercontent.com/bassslayer/wou4d.github.io/main/logo.png"
-    alt="wou4d"
-    onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/bassslayer/wou4d.github.io/main/pfp.jpg'">
+<div class="avatar-ring"></div>
+<div class="avatar-bg"></div>
+
+<img class="avatar-img"
+src="https://raw.githubusercontent.com/bassslayer/wou4d.github.io/main/logo.png"
+alt="wou4d"
+onerror="this.src='https://raw.githubusercontent.com/bassslayer/wou4d.github.io/main/pfp.jpg'">
+
 </div>
 
 <h1>@wou4d</h1>
@@ -312,104 +310,68 @@ footer {
 
 <div class="links">
 
-  <a class="link" href="https://www.youtube.com/@wou4d" target="_blank">
-    <div class="icon-wrap">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z" fill="#FF0000"/>
-        <path d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#fff"/>
-      </svg>
-    </div>
-    <span class="link-name">YouTube</span>
-    <span class="link-shine"></span>
-    <span class="link-arrow">
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </span>
-  </a>
+<a class="link" href="https://youtube.com/@wou4d" target="_blank">
+<div class="icon-wrap">
+<img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/youtube.svg">
+</div>
+<span class="link-name">YouTube</span>
+<span class="link-arrow">→</span>
+</a>
 
-  <a class="link" href="https://www.tiktok.com/@wou4d" target="_blank">
-    <div class="icon-wrap">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z" fill="#ffffff"/>
-      </svg>
-    </div>
-    <span class="link-name">TikTok</span>
-    <span class="link-shine"></span>
-    <span class="link-arrow">
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </span>
-  </a>
+<a class="link" href="https://tiktok.com/@wou4d" target="_blank">
+<div class="icon-wrap">
+<img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/tiktok.svg">
+</div>
+<span class="link-name">TikTok</span>
+<span class="link-arrow">→</span>
+</a>
 
-  <a class="link" href="https://instagram.com/wou4d" target="_blank">
-    <div class="icon-wrap">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#f09433"/>
-            <stop offset="25%" stop-color="#e6683c"/>
-            <stop offset="50%" stop-color="#dc2743"/>
-            <stop offset="75%" stop-color="#cc2366"/>
-            <stop offset="100%" stop-color="#bc1888"/>
-          </linearGradient>
-        </defs>
-        <path fill="url(#ig)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
-      </svg>
-    </div>
-    <span class="link-name">Instagram</span>
-    <span class="link-shine"></span>
-    <span class="link-arrow">
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </span>
-  </a>
+<a class="link" href="https://instagram.com/wou4d" target="_blank">
+<div class="icon-wrap">
+<img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/instagram.svg">
+</div>
+<span class="link-name">Instagram</span>
+<span class="link-arrow">→</span>
+</a>
 
-  <a class="link" href="https://open.spotify.com/user/avv6zw9u11gemdibx2h6u4689/playlists" target="_blank">
-    <div class="icon-wrap">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path fill="#1DB954" d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
-      </svg>
-    </div>
-    <span class="link-name">Spotify</span>
-    <span class="link-shine"></span>
-    <span class="link-arrow">
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </span>
-  </a>
+<a class="link" href="https://open.spotify.com/" target="_blank">
+<div class="icon-wrap">
+<img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/spotify.svg">
+</div>
+<span class="link-name">Spotify</span>
+<span class="link-arrow">→</span>
+</a>
 
-  <a class="link" href="https://kick.com/wou4d" target="_blank">
-    <div class="icon-wrap">
-      <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/kick.svg" alt="Kick">
-    </div>
-    <span class="link-name">Kick</span>
-    <span class="link-shine"></span>
-    <span class="link-arrow">
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </span>
-  </a>
+<a class="link" href="https://kick.com/wou4d" target="_blank">
+<div class="icon-wrap">
+<img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/kick.svg">
+</div>
+<span class="link-name">Kick</span>
+<span class="link-arrow">→</span>
+</a>
 
 </div>
-```
+</div>
 
-  </div>
+<footer>© 🇲🇦wou4d</footer>
 
-  <footer>© wou4d</footer>
+</div>
 
-  <script>
-    const avatar = document.getElementById('avatar');
-    avatar.addEventListener('click', () => {
-      if (avatar.classList.contains('flipping')) return;
-      avatar.classList.add('flipping');
-      setTimeout(() => avatar.classList.remove('flipping'), 850);
-    });
-  </script>
+<script>
+
+const avatar=document.getElementById("avatar");
+
+avatar.addEventListener("click",()=>{
+avatar.style.transform="rotateY(360deg)";
+avatar.style.transition="0.8s";
+
+setTimeout(()=>{
+avatar.style.transform="";
+},800);
+
+});
+
+</script>
 
 </body>
 </html>
