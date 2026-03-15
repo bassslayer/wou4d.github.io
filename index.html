@@ -60,6 +60,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 
 /* ── AVATAR ── */
@@ -260,8 +261,8 @@ h1:hover {
   flex-shrink: 0;
 }
 @keyframes arrowPulse {
-  0%, 100% { opacity: 0.4; transform: translateX(0); }
-  50%       { opacity: 0.9; transform: translateX(2px); }
+  0%, 100% { opacity: 0.3; }
+  50%       { opacity: 1; }
 }
 .link:hover .link-arrow { color: var(--purple-hi); transform: translateX(5px); animation: none; opacity: 1; }
 
@@ -278,7 +279,7 @@ footer {
 }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(18px); }
+  from { opacity: 0; transform: translateY(0); }
   to   { opacity: 1; transform: translateY(0); }
 }
 ```
@@ -375,7 +376,7 @@ footer {
 
   </div>
 
-  <footer>©🇲🇦 wou4d</footer>
+  <footer>© wou4d</footer>
 
   <script>
     const avatar = document.getElementById('avatar');
