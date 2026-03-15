@@ -192,9 +192,8 @@ flex-shrink:0;
 width:28px;
 height:28px;
 display:block;
-/* Add a subtle, multi-layered glow to the icon image */
-filter: drop-shadow(0 0 5px var(--purple-hi)) drop-shadow(0 0 8px var(--pink));
-/* The filter is on the image, so it follows the animation */
+/* Uses the unique --glow variable set in the HTML for each link */
+filter: drop-shadow(0 0 6px var(--glow));
 animation:iconFloat var(--fi-dur,3s) ease-in-out infinite var(--fi-del,0s);
 transform-origin:center center;
 }
@@ -212,9 +211,9 @@ transform-origin:center center;
 }
 
 .icon-wrap.bounce img{
-/* This temporary glow during the bounce will override the persistent glow */
+/* Amplifies the unique brand glow on bounce */
 animation:iconBounce .5s cubic-bezier(0.36,0.07,0.19,0.97) forwards !important;
-filter:drop-shadow(0 0 6px rgba(155,93,229,0.9));
+filter:drop-shadow(0 0 10px var(--glow));
 }
 
 @keyframes iconBounce{
@@ -273,28 +272,28 @@ to{opacity:1;transform:translateY(0);}
 
   <div class="links">
 
-<a class="link" href="https://youtube.com/@wou4d" target="_blank">
+<a class="link" href="https://youtube.com/@wou4d" target="_blank" style="--glow: #ff0000;">
   <div class="icon-wrap"><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/youtube.svg"></div>
   <span class="link-name">YouTube</span>
 </a>
 
-<a class="link" href="https://tiktok.com/@wou4d" target="_blank">
+<a class="link" href="https://tiktok.com/@wou4d" target="_blank" style="--glow: #00f2fe;">
   <div class="icon-wrap"><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/tiktok.svg"></div>
   <span class="link-name">TikTok</span>
 </a>
 
-<a class="link" href="https://instagram.com/wou4d" target="_blank">
+<a class="link" href="https://instagram.com/wou4d" target="_blank" style="--glow: #e1306c;">
   <div class="icon-wrap"><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/instagram.svg"></div>
   <span class="link-name">Instagram</span>
 </a>
 
-<a class="link" href="https://open.spotify.com/user/avv6zw9u11gemdibx2h6u4689/playlists" target="_blank">
+<a class="link" href="https://open.spotify.com/user/avv6zw9u11gemdibx2h6u4689/playlists" target="_blank" style="--glow: #1db954;">
   <div class="icon-wrap"><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/spotify.svg"></div>
   <span class="link-name">Spotify</span>
 </a>
 
-<a class="link" href="https://kick.com/wou4d" target="_blank">
-  <div class="icon-wrap"><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/kick.svg"></div>
+<a class="link" href="https://kick.com/wou4d" target="_blank" style="--glow: #53fc18;">
+  <div class="icon-wrap"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/kick-streaming-platform-logo-icon.svg"></div>
   <span class="link-name">Kick</span>
 </a>
 
