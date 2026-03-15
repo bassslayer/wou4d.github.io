@@ -7,15 +7,15 @@
 
 <style>
 
-:root {
-  --purple:#9b5de5;
-  --purple-dim:#6a00f4;
-  --purple-hi:#d084ff;
-  --pink:#e040fb;
-  --bg:#05050a;
-  --border:rgba(155,93,229,0.22);
-  --glass:rgba(155,93,229,0.07);
-  --muted:#55557a;
+:root{
+--purple:#9b5de5;
+--purple-dim:#6a00f4;
+--purple-hi:#d084ff;
+--pink:#e040fb;
+--bg:#05050a;
+--border:rgba(155,93,229,0.22);
+--glass:rgba(155,93,229,0.07);
+--muted:#55557a;
 }
 
 *,*::before,*::after{
@@ -80,11 +80,11 @@ animation-delay:2s;
 }
 
 @keyframes breathe{
-from{opacity:0.6;transform:scale(1);}
+from{opacity:.6;transform:scale(1);}
 to{opacity:1;transform:scale(1.08);}
 }
 
-/* MAIN WRAP */
+/* WRAP */
 
 .wrap{
 position:relative;
@@ -167,7 +167,6 @@ background:linear-gradient(90deg,#fff 0%,var(--purple-hi) 25%,var(--pink) 50%,va
 background-size:200% auto;
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
-background-clip:text;
 margin-bottom:8px;
 animation:fadeUp .6s ease .2s both,gradientSlide 3s linear infinite;
 }
@@ -175,18 +174,6 @@ animation:fadeUp .6s ease .2s both,gradientSlide 3s linear infinite;
 @keyframes gradientSlide{
 0%{background-position:0% center;}
 100%{background-position:200% center;}
-}
-
-h1:hover{
-animation:gradientSlide .8s linear infinite,glitch .4s steps(2) infinite;
-}
-
-@keyframes glitch{
-0%{filter:drop-shadow(2px 0 #e040fb) drop-shadow(-2px 0 #d084ff)}
-25%{filter:drop-shadow(-3px 0 #d084ff) drop-shadow(3px 0 #e040fb)}
-50%{filter:drop-shadow(3px 0 #e040fb) drop-shadow(-1px 0 #9b5de5)}
-75%{filter:drop-shadow(-2px 0 #d084ff) drop-shadow(2px 0 #e040fb)}
-100%{filter:drop-shadow(2px 0 #e040fb) drop-shadow(-2px 0 #d084ff)}
 }
 
 /* BIO */
@@ -282,12 +269,6 @@ justify-content:center;
 animation:iconFloat var(--fi-dur,3s) ease-in-out infinite var(--fi-del,0s);
 }
 
-.link:nth-child(1) .icon-wrap{--fi-dur:2.8s}
-.link:nth-child(2) .icon-wrap{--fi-dur:3.2s}
-.link:nth-child(3) .icon-wrap{--fi-dur:2.6s}
-.link:nth-child(4) .icon-wrap{--fi-dur:3.5s}
-.link:nth-child(5) .icon-wrap{--fi-dur:3s}
-
 @keyframes iconFloat{
 0%,100%{transform:scale(1) rotate(0)}
 35%{transform:scale(1.08) rotate(-4deg)}
@@ -308,8 +289,7 @@ filter:drop-shadow(0 0 6px rgba(155,93,229,.9));
 100%{transform:scale(1)}
 }
 
-.icon-wrap img,
-.icon-wrap svg{
+.icon-wrap img{
 width:28px;
 height:28px;
 object-fit:contain;
@@ -329,28 +309,6 @@ color:var(--purple-hi);
 letter-spacing:.06em;
 }
 
-/* ARROW */
-
-.link-arrow{
-display:flex;
-align-items:center;
-color:var(--muted);
-animation:arrowPulse 2s ease-in-out infinite;
-opacity:.4;
-}
-
-@keyframes arrowPulse{
-0%,100%{opacity:.3}
-50%{opacity:1}
-}
-
-.link:hover .link-arrow{
-color:var(--purple-hi);
-transform:translateX(4px);
-animation:none;
-opacity:1;
-}
-
 /* FOOTER */
 
 footer{
@@ -361,8 +319,6 @@ color:var(--muted);
 text-transform:uppercase;
 animation:fadeUp .6s ease .85s both;
 }
-
-/* FADE ANIMATION */
 
 @keyframes fadeUp{
 from{opacity:0;transform:translateY(20px)}
@@ -403,7 +359,6 @@ onerror="this.src='https://raw.githubusercontent.com/bassslayer/wou4d.github.io/
 </div>
 <span class="link-name">YouTube</span>
 <span class="link-shine"></span>
-<span class="link-arrow">→</span>
 </a>
 
 <a class="link" href="https://tiktok.com/@wou4d" target="_blank">
@@ -412,7 +367,6 @@ onerror="this.src='https://raw.githubusercontent.com/bassslayer/wou4d.github.io/
 </div>
 <span class="link-name">TikTok</span>
 <span class="link-shine"></span>
-<span class="link-arrow">→</span>
 </a>
 
 <a class="link" href="https://instagram.com/wou4d" target="_blank">
@@ -421,7 +375,6 @@ onerror="this.src='https://raw.githubusercontent.com/bassslayer/wou4d.github.io/
 </div>
 <span class="link-name">Instagram</span>
 <span class="link-shine"></span>
-<span class="link-arrow">→</span>
 </a>
 
 <a class="link" href="https://open.spotify.com/" target="_blank">
@@ -430,7 +383,6 @@ onerror="this.src='https://raw.githubusercontent.com/bassslayer/wou4d.github.io/
 </div>
 <span class="link-name">Spotify</span>
 <span class="link-shine"></span>
-<span class="link-arrow">→</span>
 </a>
 
 <a class="link" href="https://kick.com/wou4d" target="_blank">
@@ -439,13 +391,12 @@ onerror="this.src='https://raw.githubusercontent.com/bassslayer/wou4d.github.io/
 </div>
 <span class="link-name">Kick</span>
 <span class="link-shine"></span>
-<span class="link-arrow">→</span>
 </a>
 
 </div>
 </div>
 
-<footer>© wou4d</footer>
+<footer>© wou4d🇲🇦</footer>
 
 </div>
 
